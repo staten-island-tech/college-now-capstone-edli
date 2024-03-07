@@ -10,4 +10,5 @@ router.delete("/show/:id", controller.deleteShow);
 
 router.post("/register", userController.register);
 router.post("/login", userController.login);
+router.get("/protected", userController.authCheck, userController.protected);
 module.exports = router;

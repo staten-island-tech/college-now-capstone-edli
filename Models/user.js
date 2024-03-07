@@ -1,7 +1,7 @@
 const mongoose =  require("mongoose");
 const slugify = require("slugify");
 
-const userSchema = new mongoose.Schema({
+const UserSchema = new mongoose.Schema({
     username:{
         type: String,
         trim:true, 
@@ -36,7 +36,7 @@ const userSchema = new mongoose.Schema({
 
 // module.exports = mongoose.model("User", userSchema); 
 
-userSchema.pre("save", async function (next) {
+UserSchema.pre("save", async function (next) {
     const user = this;
     if (user.isModified("password")) {
       user.password = await bcrypt.hash(user.password, 8);
@@ -53,4 +53,4 @@ userSchema.pre("save", async function (next) {
     });
   };
   
-  module.exports = mongoose.model("User", userSchema);
+  module.exports = mongoose.model("User", UserSchema);
