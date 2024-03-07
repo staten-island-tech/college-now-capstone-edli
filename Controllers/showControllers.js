@@ -17,7 +17,7 @@ exports.updateShow = async (req, res)=> {
         const kdrama = await Show.findById(req.params.id);
         const updates = Object.keys(req.body);
         updates.forEach((update) => (kdrama[update] = req.body[update])); 
-        await shop.save();
+        await kdrama.save();
         res.json(kdrama);
     } catch (error) {
         console.log(error);
@@ -61,16 +61,16 @@ exports.updateUser = async (req, res)=> {
         const user = await User.findById(req.params.id);
         const updates = Object.keys(req.body);
         updates.forEach((update) => (user[update] = req.body[update])); 
-        await shop.save();
+        await user.save();
         res.json(user);
     } catch (error) {
         console.log(error);
     }
 };
 
-exports.deleteShow = async (req, res) => {
+exports.deleteUser = async (req, res) => {
     try {
-      const user = await Show.findByIdAndDelete(req.params.id);
+      const user = await User.findByIdAndDelete(req.params.id);
       if (!user) {
         res.status(404).send();
       }

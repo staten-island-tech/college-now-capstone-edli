@@ -1,7 +1,7 @@
 const mongoose =  require("mongoose");
 const slugify = require("slugify");
 
-const shopSchema = new mongoose.Schema({
+const showSchema = new mongoose.Schema({
     name:{
         type: String,
         trim:true, 
