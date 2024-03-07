@@ -13,10 +13,6 @@ const userSchema = new mongoose.Schema({
         trim: true,
         required: "Please provide a password",
     },
-    favorites: {
-        type: Array,
-        trim:true,
-    },
     tokens: [
         {
           token: {
