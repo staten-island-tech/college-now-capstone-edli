@@ -8,7 +8,6 @@ router.post("/show/add", controller.createShow);
 router.patch("/show/:id", controller.updateShow);
 router.delete("/show/:id", controller.deleteShow);
 
-router.get("/user", controller.getUsers);
 router.post("/register", userController.register);
 router.post("/login", userController.login);
 router.get("/protected", userController.authCheck, userController.protected);
