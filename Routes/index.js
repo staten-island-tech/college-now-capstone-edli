@@ -3,10 +3,10 @@ const router = new express.Router();
 const showController = require("../Controllers/showControllers");
 const userController = require("../Controllers/userControllers");
 
-router.get("/", controller.getShows);
-router.post("/show/add", controller.createShow);
-router.patch("/show/:id", controller.updateShow);
-router.delete("/show/:id", controller.deleteShow);
+router.get("/", showController.homePage);
+router.post("/add", showController.upload,showController.createShow);
+router.patch("/show/:id", showController.updateShow);
+router.delete("/show/:id", showController.deleteShow);
 
 router.post("/register", userController.register);
 router.post("/login", userController.login);

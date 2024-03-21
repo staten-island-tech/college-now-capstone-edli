@@ -13,14 +13,13 @@ const showSchema = new mongoose.Schema({
         trim: true,
         required: "Please provide a synopsis",
     },
-    tags: [String],
+
     genre: {
         type: Array,
         trim: true,
         required: "Please provide the genre",
     },
-    releaseYear: String, 
-    synopsis: {
+    releaseYear: {
         type: String,
         trim: true,
         required: "Please provide the show's release year",
@@ -31,7 +30,7 @@ const showSchema = new mongoose.Schema({
         required: "Please list the cast",
     },
     availability: {
-        type: Array,
+        type: String,
         trim: true,
         required: "Please provide where the show can be streamed",
     },
@@ -40,7 +39,7 @@ const showSchema = new mongoose.Schema({
         trim: true,
         required: "Please provide a rating out of 10",
     },
-
+    photo: String,
 
 });
 
