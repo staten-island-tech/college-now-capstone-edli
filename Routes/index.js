@@ -1,6 +1,6 @@
 const express = require("express");
 const router = new express.Router();
-const controller = require("../Controllers/showControllers");
+const showController = require("../Controllers/showControllers");
 const userController = require("../Controllers/userControllers");
 
 router.get("/", controller.getShows);
@@ -11,5 +11,6 @@ router.delete("/show/:id", controller.deleteShow);
 router.post("/register", userController.register);
 router.post("/login", userController.login);
 router.get("/protected", userController.authCheck, userController.protected);
+router.post("/uploadTest", showController.upload, showController.homePage);
 
 module.exports = router;
