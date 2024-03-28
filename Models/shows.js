@@ -39,7 +39,6 @@ const showSchema = new mongoose.Schema({
         trim: true,
         required: "Please provide a rating out of 10",
     },
-    photo: String,
 
 });
 
