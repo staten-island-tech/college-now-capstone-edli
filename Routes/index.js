@@ -4,7 +4,7 @@ const showController = require("../Controllers/showControllers");
 const userController = require("../Controllers/userControllers");
 
 router.get("/", showController.homePage);
-router.post("/add", showController.upload,showController.createShow);
+router.post("/add", showController.createShow);
 router.patch("/show/:id", showController.updateShow);
 router.delete("/show/:id", showController.deleteShow);
 

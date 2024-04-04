@@ -37,7 +37,7 @@ exports.homePage = (req, res) => {
 exports.createShow = async (req,res) => {
         try {
             const kdrama = new Show(req.body);
-            kdrama.photo = req.file.path;
+            // kdrama.photo = req.file.path;
             await kdrama.save();
             res.json(kdrama);
         } catch (error) {
