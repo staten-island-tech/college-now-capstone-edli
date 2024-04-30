@@ -13,13 +13,13 @@ import { ref } from "vue";
 import Login from "../components/LogIn.vue";
 const username = ref("");
 const password = ref("");
-const user = true;
+const user = ref(true);
 function notLogin(username, password) {
   console.log(username);
   console.log(password);
 }
 function change() {
-  user = false;
+  user.value = false;
 }
 async function login(username, password) {
   try {
