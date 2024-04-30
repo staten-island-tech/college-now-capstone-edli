@@ -4,7 +4,7 @@
       <SignUp v-if="!user" />
       <Login v-if="user" />
     </div>
-    <button @click="change">Already Signed Up?</button>
+    <button @click="change">Need to sign up?</button>
   </div>
 </template>
 
