@@ -4,9 +4,9 @@ export const myListStore = defineStore("myList", {
   state: () => {
     return {
       myList: {
-        items: “”,
-        ratings: “”,
-        comments: “”,
+        items: "",
+        ratings: "",
+        comments: "",
       },
     };
   },

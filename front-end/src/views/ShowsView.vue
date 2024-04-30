@@ -7,6 +7,10 @@
       <input id="myShows" type="text" v-model="comment" />
   
       <button @click="addToList">Add Show Name</button>
+
+      <RouterLink to="/MylistView">
+        <button>Submit</button>
+      </RouterLink>
     </div>
   </template>
   
