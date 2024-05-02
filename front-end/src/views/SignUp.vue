@@ -21,7 +21,7 @@ function change() {
 }
 async function signup(username, password) {
   try {
-    const res = await fetch("http://localhost:5173/login", {
+    const res = await fetch("http://localhost:5173/signup", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

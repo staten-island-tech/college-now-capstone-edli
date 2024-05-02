@@ -25,15 +25,15 @@ const router = createRouter({
       component: () => import('../views/MylistView.vue')
     },
     {
-      path: '/poke',
-      name: 'poke',
-      component: () => import('../views/AllPoke.vue')
+      path: '/data:id',
+      name: 'data',
+      component: () => import('../views/ShowData.vue')
     },
     {
-      path: '/data',
-      name: 'data',
-      component: () => import('../views/PokemonData.vue')
-    }
+      path: '/allshow',
+      name: 'allshow',
+      component: () => import('../views/AllShow.vue')
+    },
   ]
 })
 
