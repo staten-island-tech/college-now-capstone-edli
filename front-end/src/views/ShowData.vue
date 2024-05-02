@@ -1,6 +1,5 @@
 <template>
     <div>{{ kdrama.name }}</div>
-    <h2>{{ kdrama.id }}</h2>
   </template>
   
   <script setup>
