@@ -1,22 +1,24 @@
 <template>
   <h1> Add to your List! </h1> 
     <div>
-      <label for="myShows">Name: </label>
-      <input id="myShows" type="text" v-model="item" />
-      <input id="myShows" type="text" v-model="rating" />
-      <input id="myShows" type="text" v-model="comment" />
+      <label for="myShowName">Name: </label>
+      <input id="myShowName" type="text" v-model="item" />
+      <label for="myShowRating">Rating: </label>
+      <input id="myShowRating" type="text" v-model="rating" />
+      <label for="myShowComment">Comments: </label>
+      <input id="myShowComment" type="text" v-model="comment" />
   
       <button @click="addToList">Add Show Name</button>
 
       <RouterLink to="/MylistView">
-        <button>Submit</button>
+        <button>My List</button>
       </RouterLink>
     </div>
   </template>
   
 <script setup>
   import { ref } from "vue";
-  import { useOrderStore } from "../stores/mylist";
+  import { myListStore } from "../stores/mylist";
   const listStore = myListStore();
   
   const item = ref("");

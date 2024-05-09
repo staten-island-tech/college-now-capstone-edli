@@ -17,7 +17,7 @@
 
 <script setup>
 import { ref } from 'vue';
-import { authStore } from '../stores/authStore';
+import { authStore } from '../stores/auth';
 const authenStore = authStore();
 const username = ref("");
 const password = ref("");

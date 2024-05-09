@@ -5,8 +5,8 @@
       <SignUp v-if="!user" />
       <Login v-if="user" />
     </div>
-    <RouterLink to="/signup">
-      <button @click="change">Need to sign up?</button>
+    <RouterLink to="/login">
+      <button @click="change">Already Signed Up?</button>
     </RouterLink>
     
   </div>
