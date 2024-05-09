@@ -1,17 +1,32 @@
 <template>
-    <form name="login-form" @submit.prevent="login(username, password)">
-    <div>
-      <label for="username">Username: </label>
-      <input id="username" type="text" v-model="username" />
+    <div class = "logincard">
+        <form name="login-form" @submit.prevent="login(username, password)">
+        <div>
+          <label for="username">Username: </label>
+          <input id="username" type="text" v-model="username" />
+        </div>
+        <div>
+          <label for="password">Password: </label>
+          <input id="password" type="password" v-model="password" />
+        </div>
+        <button class="submit-button" type="submit">Login</button>
+      </form>
+        <p v-if="authenticated">{{ "Login Success!" }}</p>
     </div>
-    <div>
-      <label for="password">Password: </label>
-      <input id="password" type="password" v-model="password" />
-    </div>
-    <button class="submit-button" type="submit">Login</button>
-  </form>
 </template>
 
-<script setup></script>
+<script setup>
+import { ref } from 'vue';
+import { authStore } from '../stores/authStore';
+const authenStore = authStore();
+const username = ref("");
+const password = ref("");
+const authenticated = ref(authenStore.authenticated);
+
+async function toLogin() {
+  await authenStore.login({ username: username.value, password: password.value });
+  authenticated.value = authenStore.authenticated;
+}
+</script>
 
 <style scoped></style>
