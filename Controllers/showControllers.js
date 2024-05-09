@@ -24,7 +24,7 @@ const multerOptions = {
 };
 exports.upload = multer(multerOptions).single("photo");
 exports.homePage = (req, res) => {
-    const show = ["Alchemy of Souls", "Queen of Tears", "Crash Landing on You"];
+
     try {
       console.log(req.name); //we get req.name from the middleware but WE MUST call it in index
       res.json([show, req.name]); //if we want to send multiple "things" back to the user we need to use an array or object. Can't simply use , as that denotes status codes

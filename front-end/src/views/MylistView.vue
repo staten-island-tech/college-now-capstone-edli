@@ -1,8 +1,8 @@
 <template>
   <ul>
     <li v-for="item in myList.items" :key="item">{{ item }}</li>
-     <li v-for="item in myList.ratings" :key="rating">{{ rating }}</li>
-    <li v-for="item in myList.comments" :key="comment">{{ comment }}</li>
+     <li v-for="rating in myList.ratings" :key="rating">{{ rating }}</li>
+    <li v-for="comment in myList.comments" :key="comment">{{ comment }}</li>
   </ul>
 </template>
 

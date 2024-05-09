@@ -14,7 +14,9 @@
   import ShowCard from "../components/ShowCard.vue";
   const show = ref("");
   async function getKdrama() {
-    let res = await fetch("http://localhost:9999");
+    let res = await fetch("http://localhost:9999", {
+      method: "POST",
+    });
     let data = await res.json();
     show.value = data.results;
   }

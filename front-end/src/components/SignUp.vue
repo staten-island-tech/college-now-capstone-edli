@@ -9,9 +9,9 @@
               <label for="password">Password: </label>
               <input id="password" type="password" v-model="password" />
             </div>
-            <button class="submit-button" type="submit">Sign Up</button>
+            <button class="submit-button" type="submit" @click.prevent="register()">Sign Up</button>
           </form>
-        <p v-if="signupSuccess">{{ "Login Success!" }}</p>
+        <p v-if="signupSuccess">{{ "Sign Up Success!" }}</p>
     </div>
     </template>
     
