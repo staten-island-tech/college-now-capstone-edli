@@ -8,10 +8,11 @@ import { RouterLink, RouterView } from 'vue-router'
 
     <div class>
 
-      <nav>
+      <nav class = "navbar">
         <RouterLink to="/">Home</RouterLink>
-        <RouterLink to="/shows">Shows</RouterLink>
-        <RouterLink to="/mylist">My List</RouterLink>
+        <RouterLink to="/allshows">Shows</RouterLink>
+        <RouterLink to="/addshows">Add Shows</RouterLink>
+        <RouterLink to="/login">Login</RouterLink>
       </nav>
     </div>
   </header>
@@ -20,4 +21,5 @@ import { RouterLink, RouterView } from 'vue-router'
 </template>
 
 <style>
+
 </style>

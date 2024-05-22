@@ -12,11 +12,6 @@ const router = createRouter({
       component: () => import('../views/AddShows.vue')
     },
     {
-      path: '/mylist',
-      name: 'mylist',
-      component: () => import('../views/MylistView.vue')
-    },
-    {
       path: '/login',
       name: 'login',
       component: () => import('../views/LogInView.vue')
@@ -28,7 +23,7 @@ const router = createRouter({
     },
     {
       path: '/allshow',
-      name: 'allshow',
+      name: 'allshows',
       component: () => import('../views/AllShow.vue')
     },
     {

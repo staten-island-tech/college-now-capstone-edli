@@ -1,8 +1,8 @@
 <template>
     <div class = "logincard">
-        <form name="login-form" @submit.prevent="login(username, password)">
+        <form name="login-form"  @submit.prevent="login(username, password)">
         <div>
-          <label for="username">Username: </label>
+          <label for="username" class= "formName">Username: </label>
           <input id="username" type="text" v-model="username" />
         </div>
         <div>
@@ -29,4 +29,10 @@ async function toLogin() {
 }
 </script>
 
-<style scoped></style>
+<style scoped>
+@import url("https://fonts.googleapis.com/css2?family=Signika+Negative:wght@300..700&display=swap");
+
+.formName {
+  font-family: "Signika Negative", sans-serif;
+}
+</style>

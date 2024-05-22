@@ -1,5 +1,6 @@
 <template>
     <div>{{ kdrama.name }}</div>
+    <div>{{ kdrama.synopsis }}</div>
   </template>
   
   <script setup>
@@ -8,7 +9,7 @@
   const route = useRoute();
   let kdrama = ref("");
   async function getKdrama() {
-    let res = await fetch(`http://localhost:9999`);
+    let res = await fetch(`http://localhost:9999/`);
     let data = await res.json();
     kdrama.value = data;
   }

@@ -1,6 +1,6 @@
 <template>
-  <div>
-    <h1> Welcome to Drama List!</h1>
+  <div class ="homepage">
+    <h1 class="header"> Welcome to Drama List!</h1>
     <div>
       <SignUp v-if="!user" />
       <Login v-if="user" />
@@ -8,7 +8,6 @@
     <RouterLink to="/login">
       <button @click="change">Already Signed Up?</button>
     </RouterLink>
-    
   </div>
 </template>
 
@@ -45,4 +44,19 @@ import SignUp from "../components/SignUp.vue";
 // }
 </script>
 
-<style scoped></style>
+<style scoped>
+
+@import url("https://fonts.googleapis.com/css2?family=Signika+Negative:wght@300..700&display=swap");
+
+  .header {
+    font-family: "Signika Negative", sans-serif;
+    font-size: 50px;
+    width: 1000px;
+    height: 10px;
+    margin: 30px 0;
+    display: flex;
+    padding: 10px;
+    text-transform: uppercase;
+    align-items: center;
+  }
+</style>
