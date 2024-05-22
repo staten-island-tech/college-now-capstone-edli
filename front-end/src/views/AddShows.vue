@@ -1,4 +1,23 @@
 <template>
+  <AddShow v-if="authenticated" />
+  <p v-else>You must login before you can access this part of the website.</p>
+
+</template>
+
+
+<script setup>
+import AddShow from '../components/AddShow.vue';
+import { ref } from 'vue';
+
+import { authStore } from '../stores/auth';
+const authenStore = authStore();
+const authenticated = ref(authenStore.authenticated);
+</script>
+
+<style scoped></style>
+
+
+<!-- <template>
   <h1> Add to your List! </h1> 
     <div>
       <label for="myShowName">Name: </label>
@@ -33,4 +52,4 @@
   };
 </script>
   
-<style></style> 
+<style></style>  -->
