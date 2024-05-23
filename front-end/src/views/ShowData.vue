@@ -1,5 +1,6 @@
 <template>
-    <div class = "bodies">{{ kdrama[Number(route.params.id - 1)]}}</div>
+    <div class = "bodies">{{ kdrama[Number(route.params.id - 1)] }}</div>
+
 </template>
   
 <script setup>
@@ -17,6 +18,8 @@
   onMounted(() => {
     getKdrama();
   });
+
+
 </script>
   
   <style scoped>

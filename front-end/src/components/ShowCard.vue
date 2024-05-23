@@ -1,12 +1,15 @@
 <template>
     <router-link :to="showPath" class="card">
-      <h3>{{ id  }}</h3>
-      <h2>{{ showData }}</h2>
+      <h3>{{ id }}</h3>
+      <h1>{{ showData.name }}</h1>
+      <p>{{ showData.synopsis }}</p>
+      <DeleteShow />
     </router-link>
   </template>
   
   <script setup>
-  import { computed , ref} from "vue";
+  import { computed , onMounted, ref} from "vue";
+  import DeleteShow from "../components/DeleteShow.vue";
   
   const props = defineProps({
     show: Object,
@@ -23,6 +26,9 @@
   };
   showDatas(props.show);
 
+  onMounted(() => {
+    console.log("showdata", showData)
+  })
 
   </script>
   
@@ -36,7 +42,6 @@
     flex-direction: column;
     align-items: center;
     padding: 10px;
-    text-transform: uppercase;
   }
   img {
     width: 100%;

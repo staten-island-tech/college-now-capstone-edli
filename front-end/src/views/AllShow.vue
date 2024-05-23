@@ -1,9 +1,6 @@
 <template>
-    <main>
-      <ShowCard v-if="authenticated" />
-      <p v-else>You must login before you access this part of the website</p>
-    </main>
-    <div class="container">
+
+    <div class="container" >
       <ShowCard
         v-for="(kdrama, index) in show"
         :key="kdrama.name"
@@ -16,12 +13,13 @@
   <script setup>
   import { authStore } from '../stores/auth';
   const authenStore = authStore();
-  const authenticated = ref(authenStore.local.authenticated);
+  const authenticated = ref(authenStore.local.authenticated.value);
 
   import { ref, onMounted } from "vue";
   import ShowCard from "../components/ShowCard.vue";
   const show = ref("");
   async function getKdrama() {
+    console.log("haiii")
     let res = await fetch("http://localhost:9999/fetch", {
       method: "GET",
       headers: { 'Content-Type': 'application/json'}
@@ -31,8 +29,10 @@
     console.log(data);
   }
   
-  onMounted(() => {
-    getKdrama();
+  onMounted(async () => {
+    await getKdrama();
+    console.log("mount")
+    console.log(authenticated.value)
   });
 
   </script>

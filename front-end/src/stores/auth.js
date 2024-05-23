@@ -28,6 +28,7 @@ export const authStore = defineStore({
         console.log(user)
         if (res.ok) {
           this.local.authenticated = true
+          console.log("should be true",this.local)
         } else {
           console.log("not authed")
         }
@@ -38,6 +39,7 @@ export const authStore = defineStore({
     ,
     clearUser() {
       this.local = {authenticated:false}
+      console.log(this.local)
      }
   }
   
