@@ -48,6 +48,11 @@ async function register() {
 }
     </script>
     
-    <style scoped>
+<style scoped>
+
+.submit-button {
+  font-family: "Signika Negative", sans-serif;
+  font-size: 18px;
+}
     
-    </style>
+</style>

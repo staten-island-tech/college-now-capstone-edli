@@ -1,12 +1,12 @@
 <template>
   <div class ="homepage">
     <h1 class="header"> Welcome to Drama List!</h1>
-    <div>
+    <div class="signup">
       <SignUp v-if="!user" />
       <Login v-if="user" />
     </div>
     <RouterLink to="/login">
-      <button @click="change">Already Signed Up?</button>
+      <button class="signed" @click="change">Already Signed Up?</button>
     </RouterLink>
   </div>
 </template>
@@ -55,8 +55,23 @@ import SignUp from "../components/SignUp.vue";
     height: 10px;
     margin: 30px 0;
     display: flex;
-    padding: 10px;
+    padding: 30px;
     text-transform: uppercase;
     align-items: center;
+
+  }
+  .homepage {
+    background-color: #AED6F1;
+    padding: 20px;
+    border-radius: 25px;
+  }
+  .signup {
+    font-family: "Signika Negative", sans-serif;
+    font-size: 25px; 
+    margin: 10px;
+  }
+  .signed {
+    font-family: "Signika Negative", sans-serif;
+    font-size: 18px; 
   }
 </style>

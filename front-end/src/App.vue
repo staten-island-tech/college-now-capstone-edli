@@ -6,12 +6,12 @@ import { RouterLink, RouterView } from 'vue-router'
 <template>
   <header>
 
-    <div class>
+    <div>
 
-      <nav class = "navbar">
-        <RouterLink to="/">Home</RouterLink>
-        <RouterLink to="/allshows">Shows</RouterLink>
-        <RouterLink to="/addshows">Add Shows</RouterLink>
+      <nav class= "navbar">
+        <RouterLink to="/">Home  </RouterLink> 
+        <RouterLink to="/allshows">Shows  </RouterLink>
+        <RouterLink to="/addshows">Add Shows    </RouterLink>
         <RouterLink to="/login">Login</RouterLink>
       </nav>
     </div>
@@ -21,5 +21,14 @@ import { RouterLink, RouterView } from 'vue-router'
 </template>
 
 <style>
-
+.navbar {
+  font-family: "Signika Negative", sans-serif;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  background-color: #E7D3FD;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  font-size: 20px;
+}
 </style>

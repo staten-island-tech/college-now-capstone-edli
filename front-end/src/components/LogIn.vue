@@ -1,5 +1,6 @@
 <template>
     <div class = "logincard">
+      <h1 class="header">Welcome back! Login here</h1>
         <form name="login-form"  @submit.prevent="login(username, password)">
         <div>
           <label for="username" class= "formName">Username: </label>
@@ -34,5 +35,20 @@ async function toLogin() {
 
 .formName {
   font-family: "Signika Negative", sans-serif;
+}
+.logincard {
+  font-family: "Signika Negative", sans-serif;
+  background-color: #AED6F1;
+  padding: 50px;
+  border-radius: 25px;
+  font-size: 20px;
+  padding-left: 50px;
+  padding-right: 50px;
+  align-items: center;
+
+}
+.submit-button {
+  font-family: "Signika Negative", sans-serif;
+  font-size: 15px;
 }
 </style>
