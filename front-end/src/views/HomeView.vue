@@ -62,7 +62,7 @@ import SignUp from "../components/SignUp.vue";
   }
   .homepage {
     background-color: #AED6F1;
-    padding: 20px;
+    padding: 40px;
     border-radius: 25px;
     margin-top: 160px;
   }
@@ -74,5 +74,6 @@ import SignUp from "../components/SignUp.vue";
   .signed {
     font-family: "Signika Negative", sans-serif;
     font-size: 18px; 
+    margin-left: 25px;
   }
 </style>

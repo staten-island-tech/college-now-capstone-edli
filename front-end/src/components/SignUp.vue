@@ -2,12 +2,12 @@
     <div class ="signupcard">
         <form name="login-form" @submit.prevent="register(username, password)">
             <div>
-              <label for="username">Username: </label>
-              <input id="username" type="text" v-model="username" />
+              <label class="label" for="username">Username: </label>
+              <input class="input"  id="username" type="text" v-model="username" />
             </div>
             <div>
-              <label for="password">Password: </label>
-              <input id="password" type="password" v-model="password" />
+              <label  class="label" for="password">Password: </label>
+              <input class="input" id="password" type="password" v-model="password" />
             </div>
             <button class="submit-button" type="submit" @click.prevent="register()">Sign Up</button>
           </form>
@@ -53,6 +53,17 @@ async function register() {
 .submit-button {
   font-family: "Signika Negative", sans-serif;
   font-size: 18px;
+  margin-top: 10px;
+  margin-left: 18px;
+}
+.input {
+  padding:10px;
+  width: 300px;
+  margin-top: 15px;
+}
+
+.label {
+  margin-left: 20px;
 }
     
 </style>

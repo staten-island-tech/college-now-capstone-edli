@@ -4,11 +4,11 @@
         <form name="login-form"  @submit.prevent="login(username, password)">
         <div>
           <label for="username" class= "formName">Username: </label>
-          <input id="username" type="text" v-model="username" />
+          <input class ="input" id="username" type="text" v-model="username" />
         </div>
         <div>
           <label for="password">Password: </label>
-          <input id="password" type="password" v-model="password" />
+          <input class = "input" id="password" type="password" v-model="password" />
         </div>
         <button class="submit-button" type="submit" @click.prevent="toLogin()">Login</button>
       </form>
@@ -53,6 +53,15 @@ async function toLogin() {
 }
 .submit-button {
   font-family: "Signika Negative", sans-serif;
-  font-size: 15px;
+  font-size: 16px;
+  margin-top: 5px;
+  margin-bottom:5px;
+}
+
+.input {
+  padding:10px;
+  width: 300px;
+  margin-top: 15px;
+  margin-bottom:5px;
 }
 </style>
