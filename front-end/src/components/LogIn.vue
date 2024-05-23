@@ -48,6 +48,7 @@ async function toLogin() {
   padding-left: 50px;
   padding-right: 50px;
   align-items: center;
+  margin-top: 150px;
 
 }
 .submit-button {

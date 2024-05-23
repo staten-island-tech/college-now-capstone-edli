@@ -64,6 +64,7 @@ import SignUp from "../components/SignUp.vue";
     background-color: #AED6F1;
     padding: 20px;
     border-radius: 25px;
+    margin-top: 160px;
   }
   .signup {
     font-family: "Signika Negative", sans-serif;
