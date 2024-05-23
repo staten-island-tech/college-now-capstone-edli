@@ -1,6 +1,6 @@
 <template>
   <div class ="homepage">
-    <h1 class="header"> Welcome to Drama List!</h1>
+    <h1 class="header"> Welcome to KDrama List!</h1>
     <div class="signup">
       <SignUp v-if="!user" />
       <Login v-if="user" />

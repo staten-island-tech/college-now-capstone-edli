@@ -17,7 +17,7 @@ const router = createRouter({
       component: () => import('../views/LogInView.vue')
     },
     {
-      path: '/data:id',
+      path: '/data/:id',
       name: 'data',
       component: () => import('../views/ShowData.vue')
     },

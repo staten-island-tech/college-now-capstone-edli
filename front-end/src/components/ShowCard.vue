@@ -1,19 +1,29 @@
 <template>
     <router-link :to="showPath" class="card">
-      <h3>{{ id }}</h3>
-      <h2>{{ show.name }}</h2>
+      <h3>{{ id  }}</h3>
+      <h2>{{ showData }}</h2>
     </router-link>
   </template>
   
   <script setup>
-  import { computed } from "vue";
+  import { computed , ref} from "vue";
+  
   const props = defineProps({
     show: Object,
     id: Number,
   });
+  
+
   const showPath = computed(() => {
     return `/data/${props.id}`;
   });
+  const showData = ref ({});
+  function showDatas(show) {
+    showData.value = show;
+  };
+  showDatas(props.show);
+
+
   </script>
   
   <style scoped>

@@ -1,6 +1,6 @@
 <template>
     <div class ="signupcard">
-        <form name="login-form" @submit.prevent="login(username, password)">
+        <form name="login-form" @submit.prevent="register(username, password)">
             <div>
               <label for="username">Username: </label>
               <input id="username" type="text" v-model="username" />

@@ -13,7 +13,9 @@
         <button class="submit-button" type="submit" @click.prevent="toLogin()">Login</button>
       </form>
         <p v-if="authenticated">{{ "Login Success!" }}</p>
+        <button class="submit-button" @click="authenStore.clearUser()">Logout</button>
     </div>
+
 </template>
 
 <script setup>
@@ -22,12 +24,13 @@ import { authStore } from '../stores/auth';
 const authenStore = authStore();
 const username = ref("");
 const password = ref("");
-const authenticated = ref(authenStore.authenticated);
+const authenticated = ref(authenStore.local.authenticated);
 
 async function toLogin() {
   await authenStore.login({ username: username.value, password: password.value });
-  authenticated.value = authenStore.authenticated;
+  authenticated.value = authenStore.local.authenticated;
 }
+
 </script>
 
 <style scoped>

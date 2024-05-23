@@ -14,7 +14,7 @@ import { ref } from 'vue';
 
 import { authStore } from '../stores/auth';
 const authenStore = authStore();
-const authenticated = ref(authenStore.authenticated);
+const authenticated = ref(authenStore.local.authenticated);
 </script>
 
 <style scoped>

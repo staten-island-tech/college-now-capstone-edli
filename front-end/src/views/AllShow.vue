@@ -1,7 +1,7 @@
 <template>
     <main>
-      <ShowCard  />
-      <!-- <p v-else>You must login before you access this part of the website</p> -->
+      <ShowCard v-if="authenticated" />
+      <p v-else>You must login before you access this part of the website</p>
     </main>
     <div class="container">
       <ShowCard
@@ -16,22 +16,25 @@
   <script setup>
   import { authStore } from '../stores/auth';
   const authenStore = authStore();
-  const authenticated = ref(authenStore.authenticated);
+  const authenticated = ref(authenStore.local.authenticated);
 
   import { ref, onMounted } from "vue";
   import ShowCard from "../components/ShowCard.vue";
   const show = ref("");
   async function getKdrama() {
-    let res = await fetch("http://localhost:9999/", {
+    let res = await fetch("http://localhost:9999/fetch", {
       method: "GET",
+      headers: { 'Content-Type': 'application/json'}
     });
     let data = await res.json();
-    show.value = data.results;
+    show.value = data;
     console.log(data);
   }
+  
   onMounted(() => {
     getKdrama();
   });
+
   </script>
   
   <style scoped>

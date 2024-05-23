@@ -1,21 +1,26 @@
 <template>
-    <div>{{ kdrama.name }}</div>
-    <div>{{ kdrama.synopsis }}</div>
-  </template>
+    <div class = "bodies">{{ kdrama[Number(route.params.id - 1)]}}</div>
+</template>
   
-  <script setup>
+<script setup>
   import { ref, onMounted } from "vue";
   import { useRoute } from "vue-router";
   const route = useRoute();
   let kdrama = ref("");
   async function getKdrama() {
-    let res = await fetch(`http://localhost:9999/`);
+    let res = await fetch(`http://localhost:9999/fetch`);
     let data = await res.json();
     kdrama.value = data;
+    console.log(route.params.id);
+    
   }
   onMounted(() => {
     getKdrama();
   });
-  </script>
+</script>
   
-  <style scoped></style>
+  <style scoped>
+  .bodies {
+    margin-top: 100px;
+  }
+</style>
