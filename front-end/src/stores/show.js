@@ -30,7 +30,7 @@ export const useShowStore = defineStore({
             releaseYear: showData.releaseYear,
             synopsis: showData.synopsis,
             availability: showData.availability,
-          id: id
+            id: id
         })
       }
       try {
