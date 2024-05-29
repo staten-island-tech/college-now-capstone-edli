@@ -6,8 +6,8 @@ const userController = require("../Controllers/userControllers");
 router.get("/", showController.homePage);
 router.get("/fetch", showController.getShows)
 router.post("/add", showController.createShow);
-router.patch("/show/:id", showController.updateShow);
-router.delete("/show/:id", showController.deleteShow);
+router.patch("/show/update/:id", showController.updateShow);
+router.delete("/show/delete/:id", showController.deleteShow);
 
 router.post("/register", userController.register);
 router.post("/login", userController.login);

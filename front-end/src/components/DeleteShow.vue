@@ -20,7 +20,7 @@ const deleteShowSuccess = ref(false);
 const deleteShow = async () => {
     try {
       const res = await fetch('http://localhost:9999/show/:id', {
-        method: 'DELETE',
+        method: 'POST',
         headers: {
           'Content-Type': 'application/json'
         },

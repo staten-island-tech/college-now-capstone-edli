@@ -1,11 +1,31 @@
 <template>
     <div class = "bodies">{{ kdrama[Number(route.params.id - 1)] }}</div>
+    <button @click="showStore.delete(route.params.id)">Delete</button>
+    <button @click ="visible = true">Edit</button>
+    <div v-if="visible">
+      <label>Show Name: </label>
+        <input type="text" class = "synopsis" v-model="showData.name" required><br>
+        <label>Rating(/10): </label>
+        <input type="number" class = "synopsis" v-model="showData.rating" required><br>
+        <label>Cast: </label>
+        <input type="array" class = "synopsis" v-model="showData.cast" required><br>
+        <label>Genre </label>
+        <input type="array" class = "synopsis" v-model="showData.genre" required><br>
+        <label>Release Year: </label>
+        <input type="text"  class = "synopsis" v-model="showData.releaseYear" required><br>
+        <label>Synopsis: </label>
+        <input type="text" class = "synopsis" v-model="showData.synopsis" required><br>
+        <label>Availability: </label>
+        <input type="text" class = "synopsis" v-model="showData.availability" required><br>
+        <button @click="{showStore.edit(showData, route.params.id); visible = false}">Save</button>
+    </div>
 
 </template>
   
 <script setup>
   import { ref, onMounted } from "vue";
   import { useRoute } from "vue-router";
+  import { useShowStore } from "../stores/show"
   const route = useRoute();
   let kdrama = ref("");
   async function getKdrama() {
@@ -17,6 +37,18 @@
   }
   onMounted(() => {
     getKdrama();
+  });
+
+  const showStore = useShowStore();
+  const visible = ref(false);
+  const showData = ref({
+    name: '',
+    rating: '',
+    cast: '',
+    genre:'',
+    releaseYear: '',
+    synopsis: '',
+    availability: '',
   });
 
 
