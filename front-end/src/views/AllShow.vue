@@ -1,5 +1,5 @@
 <template>
-
+ 
     <div class="container" >
       <ShowCard
         v-for="(kdrama, index) in show"
@@ -13,7 +13,7 @@
   <script setup>
   import { authStore } from '../stores/auth';
   const authenStore = authStore();
-  const authenticated = ref(authenStore.local.authenticated.value);
+  const authenticated = ref(authenStore.local.authenticated);
 
   import { ref, onMounted } from "vue";
   import ShowCard from "../components/ShowCard.vue";

@@ -1,6 +1,6 @@
 <template>
     <div class = "bodies">{{ kdrama[Number(route.params.id - 1)] }}</div>
-    <button @click ="visible = true">Edit</button>
+    <button class = "submit-button" @click ="visible = true">Edit</button>
     <div v-if="visible">
       <label>Show Name: </label>
         <input type="text" class = "synopsis" v-model="showData.name" required><br>
@@ -16,9 +16,11 @@
         <input type="text" class = "synopsis" v-model="showData.synopsis" required><br>
         <label>Availability: </label>
         <input type="text" class = "synopsis" v-model="showData.availability" required><br>
-        <button @click="{showStore.edit(showData, route.params.id); visible = false}">Save</button>
+        <button class ="submit-button" @click="{showStore.edit(showData, route.params.id); visible = false}">Save</button>
     </div>
-    <button @click="{showStore.delete(showData.id); alert('Deleted!')}">Delete</button>
+    <button class = "submit-button" @click="{showStore.delete(showData.id); alert = true }">Delete</button>
+    <p v-if="alert">{{ "Deleted Successfully!" }}</p>
+
 
 </template>
   
@@ -55,15 +57,24 @@
 
 
   const showStore = useShowStore();
+
   const visible = ref(false);
+  const alert = ref(false);
  
 console.log(showData.value.id);
 
 
 </script>
   
-  <style scoped>
+<style scoped>
   .bodies {
     margin-top: 100px;
   }
+
+  .submit-button {
+  font-family: "Signika Negative", sans-serif;
+  font-size: 16px;
+  margin-top: 5px;
+  margin-bottom:5px;
+}
 </style>

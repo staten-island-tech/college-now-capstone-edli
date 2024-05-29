@@ -57,7 +57,6 @@
       }
 
   }
-    // alert('Song added successfully!');
     catch (error) {
     alert(error.message);
     console.error(error);
