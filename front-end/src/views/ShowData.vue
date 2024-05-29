@@ -27,20 +27,7 @@
   import { useRoute } from "vue-router";
   import { useShowStore } from "../stores/show"
   const route = useRoute();
-  let kdrama = ref("");
-  async function getKdrama() {
-    let res = await fetch(`http://localhost:9999/fetch`);
-    let data = await res.json();
-    kdrama.value = data;
-    console.log(route.params.id);
-    
-  }
-  onMounted(() => {
-    getKdrama();
-  });
-
-  const showStore = useShowStore();
-  const visible = ref(false);
+  let kdrama = ref([]);
   const showData = ref({
     name: '',
     rating: '',
@@ -49,8 +36,27 @@
     releaseYear: '',
     synopsis: '',
     availability: '',
+    id: ''
+  });
+  async function getKdrama() {
+    let res = await fetch(`http://localhost:9999/fetch`);
+    let data = await res.json();
+    kdrama.value = data;
+    showData.value.id = data[Number(route.params.id - 1)].id;
+
+    console.log(route.params.id);
+    
+  }
+  onMounted(() => {
+    getKdrama();
   });
 
+
+
+  const showStore = useShowStore();
+  const visible = ref(false);
+ 
+console.log(showData.value.id);
 
 </script>
   

@@ -15,8 +15,8 @@ export const useShowStore = defineStore({
   actions: {
 
     async edit(showData, id) {
-
-      console.log(id)
+      const ID = showData.value.id
+      console.log(ID)
       const requestOptions = {
         method: 'PATCH',
         headers: {
@@ -34,7 +34,7 @@ export const useShowStore = defineStore({
         })
       }
       try {
-        const res = await fetch(`http://localhost:9999/show/update/${id}`, requestOptions)
+        const res = await fetch(`http://localhost:9999/show/update/${ID}`, requestOptions)
         if (!res.ok) {
           throw new Error(`HTTP error! status: ${response.status}`)
         }
