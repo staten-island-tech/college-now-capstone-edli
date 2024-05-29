@@ -1,6 +1,6 @@
 <template>
     <div class = "bodies">{{ kdrama[Number(route.params.id - 1)] }}</div>
-    <button @click="showStore.delete(route.params.id)">Delete</button>
+    <button @click="showStore.delete(showData.id)">Delete</button>
     <button @click ="visible = true">Edit</button>
     <div v-if="visible">
       <label>Show Name: </label>
@@ -42,9 +42,10 @@
     let res = await fetch(`http://localhost:9999/fetch`);
     let data = await res.json();
     kdrama.value = data;
-    showData.value.id = data[Number(route.params.id - 1)].id;
+    showData.value.id = kdrama.value[Number(route.params.id - 1)]._id;
 
     console.log(route.params.id);
+    console.log(kdrama.value[Number(route.params.id - 1)]._id)
     
   }
   onMounted(() => {
@@ -57,6 +58,7 @@
   const visible = ref(false);
  
 console.log(showData.value.id);
+
 
 </script>
   

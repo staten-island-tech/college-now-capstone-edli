@@ -3,13 +3,11 @@
       <h3>{{ id }}</h3>
       <h1>{{ showData.name }}</h1>
       <p>{{ showData.synopsis }}</p>
-      <DeleteShow />
     </router-link>
   </template>
   
   <script setup>
   import { computed , onMounted, ref} from "vue";
-  import DeleteShow from "../components/DeleteShow.vue";
   
   const props = defineProps({
     show: Object,

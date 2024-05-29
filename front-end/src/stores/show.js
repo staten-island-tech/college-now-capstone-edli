@@ -1,5 +1,4 @@
 import { defineStore } from 'pinia'
-import { ref, onMounted } from "vue";
 
 export const useShowStore = defineStore({
   id: 'show',
@@ -15,8 +14,7 @@ export const useShowStore = defineStore({
   actions: {
 
     async edit(showData, id) {
-      const ID = showData.value.id
-      console.log(ID)
+      console.log(showData)
       const requestOptions = {
         method: 'PATCH',
         headers: {
@@ -34,7 +32,7 @@ export const useShowStore = defineStore({
         })
       }
       try {
-        const res = await fetch(`http://localhost:9999/show/update/${ID}`, requestOptions)
+        const res = await fetch(`http://localhost:9999/show/update/${showData.id}`, requestOptions)
         if (!res.ok) {
           throw new Error(`HTTP error! status: ${response.status}`)
         }
