@@ -1,6 +1,5 @@
 <template>
     <div class = "bodies">{{ kdrama[Number(route.params.id - 1)] }}</div>
-    <button @click="showStore.delete(showData.id)">Delete</button>
     <button @click ="visible = true">Edit</button>
     <div v-if="visible">
       <label>Show Name: </label>
@@ -19,6 +18,7 @@
         <input type="text" class = "synopsis" v-model="showData.availability" required><br>
         <button @click="{showStore.edit(showData, route.params.id); visible = false}">Save</button>
     </div>
+    <button @click="{showStore.delete(showData.id); alert('Deleted!')}">Delete</button>
 
 </template>
   
