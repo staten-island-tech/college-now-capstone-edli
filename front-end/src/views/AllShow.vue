@@ -1,5 +1,4 @@
 <template>
- 
     <div class="container" >
       <ShowCard
         v-for="(kdrama, index) in show"

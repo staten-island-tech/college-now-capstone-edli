@@ -1,7 +1,7 @@
 <template>
   <div class="auth">
     <AddShow v-if="authenticated" />
-    <p v-else>You must login before you can access this part of the website.</p>
+      <h1 class="text" v-else>You must login before you can access this part of the website D:</h1>
   </div>
   
 
@@ -22,6 +22,12 @@ const authenticated = ref(authenStore.local.authenticated);
   font-family: "Signika Negative", sans-serif;
   font-size: 20px;
 
+}
+
+.text {
+  margin-top: 50px;
+  align-items: center;
+  font-family: "Signika Negative", sans-serif;
 }
 </style>
 
